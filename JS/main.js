@@ -25,9 +25,62 @@
 // 3. Al momento giusto (ihihhi starà a voi capire quale) rispondete a questa domanda: “Quanti cicli servono?”
 
 
+const avanti = document.querySelector(".avanti");
+const indietro = document.querySelector(".indietro");
+let imgs = document.getElementsByClassName("img");
+let activeImg = 0;
+
+// inizio senza tasto indietro
+if(activeImg === 0){
+
+    indietro.classList.add("nascosto");
+    
+};
+
+avanti.addEventListener("click", function(){
+
+    if ( activeImg < (imgs.length - 1)){
+
+        imgs[activeImg].classList.remove("active");
+
+        activeImg++;
+        
+
+        imgs[activeImg].classList.add("active");
+
+        if(activeImg === imgs.length - 1){
+
+            avanti.classList.add("nascosto");
+            
+        };
+        if(activeImg !== 0){
+            indietro.classList.remove("nascosto");
+        };
+    };
+});
 
 
+indietro.addEventListener("click", function(){
 
+    if ( activeImg > 0){
+
+        imgs[activeImg].classList.remove("active");
+
+        activeImg--;
+        
+
+        imgs[activeImg].classList.add("active");
+
+        if(activeImg === 0){
+
+            indietro.classList.add("nascosto");
+            
+        };
+        if(activeImg !== imgs.length - 1){
+            avanti.classList.remove("nascosto");
+        };
+    };
+});
 
 
 

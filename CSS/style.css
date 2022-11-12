@@ -1,9 +1,15 @@
 /* roboto */
 /* 
 
+
 font-family: 'Roboto', sans-serif;
 
 */
+/* :root{ */
+    /* var(--w-colonna) */
+    /* --w-colonna: 130px; */
+    
+/* } */
 
 *{
     margin:0;
@@ -12,6 +18,73 @@ font-family: 'Roboto', sans-serif;
     font-family: 'Roboto', sans-serif;
 }
 
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+}
+
+.carosello{
+    /* var(--h-caros) */
+    --h-caros: 400px;
+    height:  var(--h-caros);
+    width: calc(var(--h-caros) * 3.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    /* background-color: rgb(255, 0, 153); */
+}
+
+
+.img{
+    height: 100%;
+    width: auto;
+    display: none;
+}
+
+
+.active{
+    display:block;
+}
+
+.tasto{
+    position: absolute;
+
+    height:  calc(var(--h-caros) / 9);
+    width: calc(var(--h-caros) / 9);
+    border-radius: 50%;
+    margin: 5px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 
 
+    /* background-color: darkgreen; */
+
+
+}
+.tasto:hover{
+    border: 1px solid grey;
+    /* background-color: blue; */
+}
+
+.avanti{
+    right: 0;
+
+}
+.indietro{
+    left: 0;
+
+}
+
+.nascosto{
+    display: none;
+}
