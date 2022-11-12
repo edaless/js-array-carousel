@@ -28,58 +28,60 @@
 const avanti = document.querySelector(".avanti");
 const indietro = document.querySelector(".indietro");
 let imgs = document.getElementsByClassName("img");
-let activeImg = 0;
+let rigLat = document.getElementsByClassName("rig-lat");
+let index = 0;
 
-// inizio senza tasto indietro
-if(activeImg === 0){
 
-    indietro.classList.add("nascosto");
-    
-};
 
 avanti.addEventListener("click", function(){
 
-    if ( activeImg < (imgs.length - 1)){
+    if ( index <= (imgs.length - 1)){
 
-        imgs[activeImg].classList.remove("active");
+        imgs[index].classList.remove("active");
+        rigLat[index].classList.remove("selected");
+        rigLat[index].classList.add("dark");
 
-        activeImg++;
+        if ( index === (imgs.length - 1)){
+
+            index = 0;
+    
+        }else{
+            index++;
+        };
         
 
-        imgs[activeImg].classList.add("active");
+        imgs[index].classList.add("active");
+        rigLat[index].classList.remove("dark");
+        rigLat[index].classList.add("selected");
 
-        if(activeImg === imgs.length - 1){
-
-            avanti.classList.add("nascosto");
-            
-        };
-        if(activeImg !== 0){
-            indietro.classList.remove("nascosto");
-        };
+        
     };
 });
 
 
 indietro.addEventListener("click", function(){
 
-    if ( activeImg > 0){
+    
 
-        imgs[activeImg].classList.remove("active");
+    imgs[index].classList.remove("active");
+    rigLat[index].classList.remove("selected");
+    rigLat[index].classList.add("dark");
 
-        activeImg--;
-        
+    if ( index === 0){
 
-        imgs[activeImg].classList.add("active");
+        index = (imgs.length - 1);
 
-        if(activeImg === 0){
-
-            indietro.classList.add("nascosto");
-            
-        };
-        if(activeImg !== imgs.length - 1){
-            avanti.classList.remove("nascosto");
-        };
+    }else{
+        index--;
     };
+    
+
+    imgs[index].classList.add("active");
+    rigLat[index].classList.remove("dark");
+    rigLat[index].classList.add("selected");
+
+        
+    
 });
 
 

@@ -27,11 +27,16 @@ font-family: 'Roboto', sans-serif;
     /* background-color: aqua; */
 }
 
-.carosello{
+:root{
     /* var(--h-caros) */
     --h-caros: 400px;
+    /* var(--rapp-img3) */
+    --rapp-img3: 2.67558;
+
+}
+.carosello{
     height:  var(--h-caros);
-    width: calc(var(--h-caros) * 3.5);
+    width: calc(var(--h-caros) * var(--rapp-img3));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,38 +58,119 @@ font-family: 'Roboto', sans-serif;
     display:block;
 }
 
-.tasto{
+.contenitore-tasto{
     position: absolute;
 
-    height:  calc(var(--h-caros) / 9);
-    width: calc(var(--h-caros) / 9);
-    border-radius: 50%;
+    height:  40px;
+    width: 40px;
     margin: 5px;
+
     
     display: flex;
     align-items: center;
     justify-content: center;
 
+    /* background-color: blue; */
+
+}
+
+.tasto{
+    /* position: absolute; */
+
+    height:  35px;
+    width: 35px;
+    /* height:  calc(var(--h-caros) / 5);
+    width: calc(var(--h-caros) / 5); */
+    font-size: 20px;
+    border-radius: 50%;
+    /* margin: 5px; */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 500;
 
 
-    /* background-color: darkgreen; */
+
+    background-color: rgba(255, 255, 255, 0.539);
 
 
 }
 .tasto:hover{
-    border: 1px solid grey;
+    border: 2px solid rgb(255, 117, 43);
     /* background-color: blue; */
+}
+.tasto:active{
+    height:  40px;
+    width: 40px;
+    
+    font-size: 25px;
+    
 }
 
 .avanti{
-    right: 0;
+    bottom: 0;
 
 }
 .indietro{
-    left: 0;
+    top: 0;
 
+}
+
+
+.col-lat{
+    height:  var(--h-caros);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: calc(var(--h-caros) * 0.4); */
+}
+
+
+.rig-lat{
+    /* var(--h-rig-lat) */
+    --h-rig-lat: calc(var(--h-caros) / 5);
+    height:  var(--h-rig-lat);   
+    
+    /* width: calc(var(--h-rig-lat) * 2); */
+    width: calc(var(--h-rig-lat) * var(--rapp-img3));
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+
+
+    /* background-color: rgb(30, 255, 0); */
+    /* border: 1px solid black; */
+}
+
+.img-lat{
+    width: 100%;
+    height: auto;
+
+}
+
+.black{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .nascosto{
     display: none;
+}
+
+.selected{
+    border: 2px solid rgb(255, 0, 255)
+}
+
+.dark{
+    filter: brightness(0.2);
 }
